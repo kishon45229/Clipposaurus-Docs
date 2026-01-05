@@ -1,0 +1,62 @@
+"use client";
+
+import React from "react";
+import { useDocs } from "@/contexts/DocsContext";
+import type { DocsPage, DocsPageSection } from "@/types";
+import { StepsSection } from "@/components/docs/StepsSection";
+import { ProTipsSection } from "@/components/docs/quick-start/ProTipsSection";
+import { CTASection } from "@/components/docs/CTASection";
+import { SectionHeadline } from "@/components/docs/SectionHeadline";
+import { PageHelpful } from "@/components/docs/PageHelpful";
+
+export const QuickStartContainer = React.memo(() => {
+    const { currentPage } = useDocs();
+
+    if (!currentPage || !currentPage.sections) {
+        return null;
+    }
+
+    const { sections } = currentPage as DocsPage & { sections: DocsPageSection[] };
+
+    return (
+        <div className="space-y-16">
+            {sections.map((section) => {
+                switch (section.id) {
+                    case "sharing-content":
+                        return (
+                            <div key={section.id} className="space-y-8">
+                                <SectionHeadline section={section as DocsPageSection} />
+                                <StepsSection section={section as DocsPageSection} />
+                            </div>
+                        )
+                    case "accessing-content":
+                        return (
+                            <div key={section.id} className="space-y-8">
+                                <SectionHeadline section={section as DocsPageSection} />
+                                <StepsSection section={section as DocsPageSection} />
+                            </div>
+                        )
+                    case "pro-tips":
+                        return (
+                            <div key={section.id} className="space-y-8">
+                                <SectionHeadline section={section as DocsPageSection} />
+                                <ProTipsSection section={section as DocsPageSection} />
+                            </div>
+                        )
+                    case "cta":
+                        return (
+                            <div key={section.id} className="space-y-8">
+                                <SectionHeadline section={section as DocsPageSection} />
+                                <CTASection section={section as DocsPageSection} />
+                                <PageHelpful />
+                            </div>
+                        )
+                    default:
+                        return null;
+                }
+            })}
+        </div>
+    );
+});
+
+QuickStartContainer.displayName = "QuickStartContainer";

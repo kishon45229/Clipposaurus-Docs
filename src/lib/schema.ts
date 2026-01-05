@@ -1,0 +1,75 @@
+import { z } from "zod";
+
+// Docs
+const CTASchema = z.object({
+  id: z.string(),
+  title: z.string(),
+});
+
+const DocsSidebarItemSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  href: z.string(),
+});
+
+const DocsSidebarSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  children: z.array(DocsSidebarItemSchema),
+});
+
+const DocsPageHeaderSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+});
+
+const DocsPageSectionSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  description: z.string().optional(),
+  data: z.any(),
+});
+
+const DocsPageFooterSchema = z.object({
+  nextPage: CTASchema.optional(),
+  previousPage: CTASchema.optional(),
+});
+
+const DocsPageSchema = z.object({
+  id: z.string(),
+  header: DocsPageHeaderSchema,
+  sections: z.array(DocsPageSectionSchema),
+  footer: DocsPageFooterSchema,
+});
+
+export const DocsComponentSchema = z.object({
+  title: z.string(),
+  defaultPage: z.string(),
+  sidebar: z.array(DocsSidebarSchema),
+  pages: z.array(DocsPageSchema),
+});
+
+// Changelog
+const ChangelogItemSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+});
+
+const ChangelogCategorySchema = z.object({
+  category: z.string(),
+  items: z.array(ChangelogItemSchema),
+});
+
+const ChangelogReleaseSchema = z.object({
+  version: z.string(),
+  date: z.string(),
+  title: z.string(),
+  type: z.enum(["major", "minor", "patch"]),
+  changes: z.array(ChangelogCategorySchema),
+});
+
+export const ChangelogComponentSchema = z.object({
+  headline: z.string(),
+  description: z.string(),
+  releases: z.array(ChangelogReleaseSchema),
+});
