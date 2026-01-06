@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import { HeartHandshake, Bug, ScrollText, HelpCircle, Mail, FileText } from "lucide-react";
 import { useRedirects } from "@/hooks/useRedirect";
 import {
@@ -24,53 +23,42 @@ export const MoreMenu = () => {
                         More
                     </NavigationMenuTrigger>
                     <NavigationMenuContent
-                        className="
-              z-50 left-auto right-0
-              bg-white/95
-              backdrop-blur-xl shadow-xl
-              border border-zinc-200
-              dark:bg-zinc-900/95 dark:border-zinc-800
-            "
+                        className="z-50 left-auto right-0 bg-white/95 backdrop-blur-xl shadow-xl border border-zinc-200 dark:bg-zinc-900/95 dark:border-zinc-800"
                     >
                         <ul className="w-56 p-2 space-y-1">
                             <NavItem
-                                href={handleRedirectToFAQ}
+                                onClick={handleRedirectToFAQ}
                                 icon={HelpCircle}
                                 title="FAQ"
                                 description="Common questions and answers"
                             />
                             <NavItem
-                                href={handleRedirectToChangelog}
+                                onClick={handleRedirectToChangelog}
                                 icon={ScrollText}
                                 title="Changelog"
                                 description="See what's new and improved"
                             />
                             <NavItem
-                                href={handleRedirectToGitHubIssues}
+                                onClick={handleRedirectToGitHubIssues}
                                 icon={Bug}
                                 title="Report an Issue"
                                 description="Found a bug? Let us know"
                             />
                             <NavItem
-                                href={handleRedirectToTermsOfService}
+                                onClick={handleRedirectToTermsOfService}
                                 icon={FileText}
                                 title="Terms of Service"
                                 description="Read our terms and conditions"
                             />
                             <NavItem
-                                href={handleContactUs}
+                                onClick={handleContactUs}
                                 icon={Mail}
                                 title="Contact Us"
                                 description="Get in touch with support"
                             />
-                            <li className="
-                h-px
-                my-2
-                bg-zinc-200
-                dark:bg-zinc-800
-              " />
+                            <li className="h-px my-2 bg-zinc-200 dark:bg-zinc-800" />
                             <NavItem
-                                href={handleRedirectToGitHubSponsor}
+                                onClick={handleRedirectToGitHubSponsor}
                                 icon={HeartHandshake}
                                 title="Support the Project"
                                 description="Help keep Clipposaurus free"
@@ -85,7 +73,7 @@ export const MoreMenu = () => {
 };
 
 interface NavItemProps {
-    href: () => void;
+    onClick: () => void;
     title: string;
     description: string;
     icon: React.ElementType;
@@ -93,7 +81,7 @@ interface NavItemProps {
 }
 
 function NavItem({
-    href,
+    onClick,
     title,
     description,
     icon: Icon,
@@ -102,37 +90,19 @@ function NavItem({
     return (
         <li>
             <NavigationMenuLink asChild>
-                <Link
-                    href={href}
-                    className={`
-            flex z-50
-            gap-3 px-3 py-2
-            text-sm
-            rounded-xl
-            transition-colors
-            cursor-target
-            ${highlight
-                            ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300"
-                            : "text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800/60"}
-          `}
+                <button
+                    type="button"
+                    onClick={onClick}
+                    className={`flex z-50 gap-3 px-3 py-2 text-sm rounded-xl transition-colors cursor-target ${highlight ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300" : "text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800/60"}`}
                 >
                     <div className="flex flex-row gap-2">
-                        <Icon className="
-            shrink-0
-            h-4 w-4
-            mt-0.5
-            opacity-80
-          " />
+                        <Icon className="shrink-0 h-4 w-4 mt-0.5 opacity-80" />
                         <div className="font-medium">{title}</div>
                     </div>
                     <div>
-                        <div className="
-              text-xs
-              opacity-30
-            ">{description}
-                        </div>
+                        <div className="text-xs opacity-30">{description}</div>
                     </div>
-                </Link>
+                </button>
             </NavigationMenuLink>
         </li>
     );
