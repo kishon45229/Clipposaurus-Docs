@@ -10,6 +10,9 @@ import TargetCursor from "@/components/TargetCursor";
 import { HeadTags } from "@/components/common/HeadTags";
 import { DocsProviders } from "@/components/docs/DocsProviders";
 
+// Trigger env validation
+import env from "@/lib/env";
+
 const funnelSans = Funnel_Sans({
   weight: "400",
   subsets: ["latin"],

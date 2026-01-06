@@ -2,9 +2,9 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-export const NavbarBrand = React.memo(() => {
+export const NavbarBrand = () => {
     return (
-        <Link href="/" className="flex items-center cursor-target gap-2 pr-2">
+        <Link href="/"className="flex items-center cursor-target gap-2 pr-2">
             <Image
                 src="/icon0.svg"
                 alt="Clipposaurus Logo"
@@ -16,7 +16,7 @@ export const NavbarBrand = React.memo(() => {
                 className="text-[clamp(1rem,2vw,1.25rem)] font-semibold"
                 aria-label="Clipposaurus"
             >
-                Clipposaurus
+                Clipposaurus Docs
             </span>
             <span
                 className="rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-emerald-600 ring-1 ring-emerald-200"
@@ -26,6 +26,4 @@ export const NavbarBrand = React.memo(() => {
             </span>
         </Link>
     );
-});
-
-NavbarBrand.displayName = "NavbarBrand";
+};

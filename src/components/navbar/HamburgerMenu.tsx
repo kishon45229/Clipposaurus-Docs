@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import {
     Menu,
-    BookOpen,
+    Home,
     Star,
     HelpCircle,
     ScrollText,
@@ -23,12 +23,11 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { useGitHubStars } from "@/hooks/useGitHubStars";
-import { GITHUB_REPO_URL, GITHUB_SPONSOR_URL } from "@/config/github";
+import { useRedirects } from "@/hooks/useRedirect";
 
-const DOCS_URL = process.env.NEXT_PUBLIC_DOCS_URL || "http://localhost:3001";
-
-export const HamburgerMenu = React.memo(() => {
+export const HamburgerMenu = () => {
     const stars = useGitHubStars();
+    const { handleRedirectToApp, handleRedirectToGitHub, handleRedirectToFAQ, handleRedirectToChangelog, handleRedirectToGitHubIssues, handleRedirectToTermsOfService, handleContactUs, handleRedirectToGitHubSponsor } = useRedirects();
 
     return (
         <DropdownMenu>
@@ -49,42 +48,32 @@ export const HamburgerMenu = React.memo(() => {
             >
                 {/* Docs */}
                 <DropdownMenuItem
-                    onClick={() => window.open(DOCS_URL, "_blank")}
+                    onClick={handleRedirectToApp}
                     className="hamburger-menu-item"
                 >
-                    <BookOpen className="hamburger-menu-icon-item" />
-                    Documentation
+                    <Home className="hamburger-menu-icon-item" />
+                    Go to Home
                 </DropdownMenuItem>
 
                 {/* FAQ */}
                 <DropdownMenuItem
-                    onClick={() => window.open("/faq")}
+                    onClick={handleRedirectToFAQ}
                     className="hamburger-menu-item"
                 >
                     <HelpCircle className="hamburger-menu-icon-item" />
                     FAQ
                 </DropdownMenuItem>
 
-                <DropdownMenuSeparator className="
-                    my-2
-                    bg-zinc-200
-                    dark:bg-zinc-800
-                " />
+                <DropdownMenuSeparator className="my-2 bg-zinc-200 dark:bg-zinc-800" />
 
                 {/* GitHub */}
                 <DropdownMenuItem
-                    onClick={() => window.open(GITHUB_REPO_URL, "_blank")}
+                    onClick={handleRedirectToGitHub}
                     className="hamburger-menu-item"
                 >
                     <FontAwesomeIcon icon={faGithub} className="hamburger-menu-icon-item" />
                     GitHub
-                    <span className="
-                        flex items-center justify-center
-                        gap-2 ml-auto
-                        text-sm sm:text-base md:text-lg
-                        text-zinc-500
-                        dark:text-zinc-400
-                    ">
+                    <span className="flex items-center justify-center gap-2 ml-auto text-sm sm:text-base md:text-lg text-zinc-500 dark:text-zinc-400">
                         <Star className="hamburger-menu-icon-item" />
                         {stars}
                     </span>
@@ -92,7 +81,7 @@ export const HamburgerMenu = React.memo(() => {
 
                 {/* Changelog */}
                 <DropdownMenuItem
-                    onClick={() => window.open("/changelog")}
+                    onClick={handleRedirectToChangelog}
                     className="hamburger-menu-item"
                 >
                     <ScrollText className="hamburger-menu-icon-item" />
@@ -101,13 +90,7 @@ export const HamburgerMenu = React.memo(() => {
 
                 {/* Report Issue */}
                 <DropdownMenuItem
-                    onClick={() => {
-                        const link = document.createElement('a');
-                        link.href = `${GITHUB_REPO_URL}/issues`;
-                        link.target = '_blank';
-                        link.rel = 'noopener noreferrer';
-                        link.click();
-                    }}
+                    onClick={handleRedirectToGitHubIssues}
                     className="hamburger-menu-item"
                 >
                     <Bug className="hamburger-menu-icon-item" />
@@ -116,7 +99,7 @@ export const HamburgerMenu = React.memo(() => {
 
                 {/* Terms of Service */}
                 <DropdownMenuItem
-                    onClick={() => window.open("/terms-of-service")}
+                    onClick={handleRedirectToTermsOfService}
                     className="hamburger-menu-item"
                 >
                     <FileText className="hamburger-menu-icon-item" />
@@ -125,31 +108,19 @@ export const HamburgerMenu = React.memo(() => {
 
                 {/* Contact Us */}
                 <DropdownMenuItem
-                    onClick={() => {
-                        const link = document.createElement('a');
-                        link.href = "mailto:support@clipposaurus.com";
-                        link.click();
-                    }}
+                    onClick={handleContactUs}
                     className="hamburger-menu-item"
                 >
                     <Mail className="hamburger-menu-icon-item" />
                     Contact Us
                 </DropdownMenuItem>
 
-                <DropdownMenuSeparator className="
-                    my-2
-                    bg-zinc-200
-                    dark:bg-zinc-800
-                " />
+                <DropdownMenuSeparator className="my-2 bg-zinc-200 dark:bg-zinc-800" />
 
                 {/* Donate */}
                 <DropdownMenuItem
-                    onClick={() => window.open(`${GITHUB_SPONSOR_URL}`, "_blank")}
-                    className="
-                hamburger-menu-item
-                bg-emerald-50text-emerald-700
-                dark:bg-emerald-950/40dark:text-emerald-300
-        "
+                    onClick={handleRedirectToGitHubSponsor}
+                    className="hamburger-menu-item bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300"
                 >
                     <HeartHandshake className="hamburger-menu-icon-item" />
                     Support the Project
@@ -157,6 +128,4 @@ export const HamburgerMenu = React.memo(() => {
             </DropdownMenuContent >
         </DropdownMenu >
     );
-});
-
-HamburgerMenu.displayName = "HamburgerMenu";
+};
