@@ -31,7 +31,7 @@ This project is licensed under the MIT License.
 2. Install dependencies and create your `.env.local` file
 3. Run `npm run lint` before opening a pull request
 
-Issues and pull requests are welcome. Please maintain the zero-knowledge guarantees when modifying storage or cryptographic flows.
+Issues and pull requests are welcome. Report issues at [GitHub Issues](https://github.com/kishon45229/Clipposaurus/issues). Please maintain the zero-knowledge guarantees when modifying storage or cryptographic flows.
 
 ## Support
 
