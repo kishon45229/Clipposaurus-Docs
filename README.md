@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Clipposaurus Documentation
 
-## Getting Started
+This is the official documentation for [Clipposaurus](https://app.clipposaurus.com), a secure, zero-knowledge digital clipboard for sharing text, code, and files.
 
-First, run the development server:
+## About Clipposaurus
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Clipposaurus is your instant, zero-signup, open-source digital clipboard with true end-to-end encryption. Share text, code, and files (up to 50MB total) across any device in seconds by creating a Drop. Your Drop lives for up to 1 hour — then it's automatically and permanently erased. We can't see your content, track you, or recover anything later. Privacy isn't a feature here — it's the foundation.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> **⚠️ Beta Notice:** Clipposaurus is currently in beta testing. You may encounter errors, bugs, or temporary service unavailability as we improve the platform. Please report any issues you experience.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Key Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Zero-Knowledge Architecture**: Only you control your encryption keys
+- **No Sign-up Required**: Instant access without accounts or logins
+- **End-to-End Encryption**: Your data is encrypted before leaving your device
+- **Automatic Deletion**: Drops expire and are permanently erased after maximum 1 hour
+- **Cross-Platform**: Works on any device with a web browser
+- **Open Source**: Transparent and auditable codebase
 
-## Learn More
+## Accessing the Documentation
 
-To learn more about Next.js, take a look at the following resources:
+Visit the live documentation at [https://docs.clipposaurus.com](https://docs.clipposaurus.com).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project is licensed under the MIT License.
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Fork and clone the repository
+2. Install dependencies and create your `.env.local` file
+3. Run `npm run lint` before opening a pull request
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Issues and pull requests are welcome. Please maintain the zero-knowledge guarantees when modifying storage or cryptographic flows.
+
+## Support
+
+If Clipposaurus saves you time or strengthens your privacy, please consider supporting the project:
+
+- [GitHub Sponsors](https://github.com/sponsors/kishon45229)
+- [Buy Me a Coffee](https://buymeacoffee.com/kishon45229)
+
+Your support helps us maintain and improve this fast, secure, and open-source clipboard for everyone.

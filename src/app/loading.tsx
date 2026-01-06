@@ -24,7 +24,7 @@ export default function LoadingFallback(): React.ReactElement {
 
         {/* Title */}
         <div className="relative text-xl font-semibold text-zinc-900 dark:text-zinc-100 tracking-tight">
-          Preparing your workspace
+          Preparing the documentation
         </div>
 
         {/* Description */}
@@ -41,7 +41,7 @@ export default function LoadingFallback(): React.ReactElement {
 
         {/* Accessibility */}
         <div className="sr-only" aria-live="polite" aria-atomic="true">
-          Preparing your workspace. Please wait.
+          Preparing the documentation. Please wait.
         </div>
       </div>
     </div>
