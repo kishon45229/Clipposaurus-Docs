@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+
 export const NavbarBrand = () => {
     return (
         <Link href="/" className="flex items-center cursor-target gap-2 pr-2">

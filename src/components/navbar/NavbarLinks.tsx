@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import { Star, Home } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -13,7 +12,7 @@ import { MoreMenu } from "./MoreMenu";
 
 export const NavbarLinks = () => {
   const stars = useGitHubStars();
-  const { handleRedirectToApp, handleRedirectToGitHub, handleRedirectToFAQ, handleRedirectToChangelog, handleRedirectToGitHubIssues, handleRedirectToTermsOfService, handleContactUs, handleRedirectToGitHubSponsor } = useRedirects();
+  const { handleRedirectToApp, handleRedirectToGitHub } = useRedirects();
 
   return (
     <nav className="hidden sm:flex items-center gap-2" role="navigation" aria-label="Main navigation">

@@ -3,7 +3,6 @@
 import React from "react";
 import Rollbar from "rollbar";
 import { clientConfig } from "@/lib/rollbar";
-import { useEffect } from "react";
 import { ErrorUI } from "@/components/common/ErrorUI";
 
 /**
