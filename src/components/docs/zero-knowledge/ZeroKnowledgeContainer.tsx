@@ -3,13 +3,13 @@
 import React from "react";
 import { useDocs } from "@/contexts/DocsContext";
 import type { DocsPage, DocsPageSection } from "@/types";
-import { SectionHeadline } from "@/components/docs/SectionHeadline";
+import { SectionHeadline } from "@/components/docs/shared/SectionHeadline";
 import { WhatIsZeroKnowledgeSection } from "@/components/docs/zero-knowledge/WhatIsZeroKnowledgeSection";
 import { WhatWeStoreSection } from "@/components/docs/zero-knowledge/WhatWeStoreSection";
 import { WhyZeroKnowledgeSection } from "@/components/docs/zero-knowledge/WhyZeroKnowledgeSection";
 import { VerificationSection } from "@/components/docs/zero-knowledge/VerificationSection";
-import { CTASection } from "@/components/docs/CTASection";
-import { PageHelpful } from "@/components/docs/PageHelpful";
+import { CTASection } from "@/components/docs/shared/CTASection";
+import { PageHelpful } from "@/components/docs/shared/PageHelpful";
 
 export const ZeroKnowledgeContainer = React.memo(() => {
     const { currentPage } = useDocs();

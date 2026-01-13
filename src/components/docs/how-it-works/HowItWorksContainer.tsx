@@ -9,9 +9,9 @@ import { EncryptionSection } from "@/components/docs/how-it-works/EncryptionSect
 import { StorageSection } from "@/components/docs/how-it-works/StorageSection";
 import { AccessSection } from "@/components/docs/how-it-works/AccessSection";
 import { DeletionSection } from "@/components/docs/how-it-works/DeletionSection";
-import { SectionHeadline } from "@/components/docs/SectionHeadline";
-import { CTASection } from "@/components/docs/CTASection";
-import { PageHelpful } from "@/components/docs/PageHelpful";
+import { SectionHeadline } from "@/components/docs/shared/SectionHeadline";
+import { CTASection } from "@/components/docs/shared/CTASection";
+import { PageHelpful } from "@/components/docs/shared/PageHelpful";
 
 export const HowItWorksContainer = React.memo(() => {
     const { currentPage } = useDocs();

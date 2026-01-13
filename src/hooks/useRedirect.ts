@@ -15,9 +15,12 @@ interface RedirectsReturn {
   handleRedirectToFAQ: () => void;
   handleRedirectToChangelog: () => void;
   handleRedirectToGitHubIssues: () => void;
+  handleRedirectToGitHubDiscussions: () => void;
   handleRedirectToTermsOfService: () => void;
   handleContactUs: () => void;
   handleRedirectToGitHubSponsor: () => void;
+  handleRedirectToCreateDrop: () => void;
+  handleRedirectToUnlockDrop: () => void;
 }
 
 export function useRedirects(): RedirectsReturn {
@@ -41,7 +44,16 @@ export function useRedirects(): RedirectsReturn {
     window.open(GITHUB_ISSUES_URL, "_blank", "noopener noreferrer");
   }, []);
 
-  // GITHUB ISSUES
+  // GITHUB DISCUSSIONS
+  const handleRedirectToGitHubDiscussions = React.useCallback(() => {
+    window.open(
+      GITHUB_REPO_URL + "/discussions",
+      "_blank",
+      "noopener noreferrer"
+    );
+  }, []);
+
+  // GITHUB SPONSORS
   const handleRedirectToGitHubSponsor = React.useCallback(() => {
     window.open(GITHUB_SPONSOR_URL, "_blank");
   }, []);
@@ -66,6 +78,15 @@ export function useRedirects(): RedirectsReturn {
     window.location.href = `mailto:${CONTACT_EMAIL}`;
   }, []);
 
+  const handleRedirectToCreateDrop = React.useCallback(() => {
+    window.location.href = APP_URL + "/create-drop";
+  }, []);
+
+  // UNLOCK DROP
+  const handleRedirectToUnlockDrop = React.useCallback(() => {
+    window.location.href = APP_URL + "/unlock-drop";
+  }, []);
+
   return {
     handleRedictToCurrentPageHome,
     handleRedirectToApp,
@@ -73,8 +94,11 @@ export function useRedirects(): RedirectsReturn {
     handleRedirectToFAQ,
     handleRedirectToChangelog,
     handleRedirectToGitHubIssues,
+    handleRedirectToGitHubDiscussions,
     handleRedirectToTermsOfService,
     handleContactUs,
     handleRedirectToGitHubSponsor,
+    handleRedirectToCreateDrop,
+    handleRedirectToUnlockDrop,
   };
 }

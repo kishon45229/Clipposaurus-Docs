@@ -3,14 +3,14 @@
 import React from "react";
 import { useDocs } from "@/contexts/DocsContext";
 import type { DocsPage, DocsPageSection } from "@/types";
-import { SectionHeadline } from "@/components/docs/SectionHeadline";
-import { FeaturesSection } from "@/components/docs/FeaturesSection";
-import { StepsSection } from "@/components/docs/StepsSection";
-import { UseCaseSection } from "@/components/docs/UseCaseSection";
-import { BestPracticesSection } from "@/components/docs/BestPracticesSection";
+import { SectionHeadline } from "@/components/docs/shared/SectionHeadline";
+import { FeaturesSection } from "@/components/docs/shared/FeaturesSection";
+import { StepsSection } from "@/components/docs/shared/StepsSection";
+import { UseCaseSection } from "@/components/docs/shared/UseCaseSection";
+import { BestPracticesSection } from "@/components/docs/shared/BestPracticesSection";
 import { SupportedFileTypesSection } from "@/components/docs/sharing-files/SupportedFileTypesSection";
-import { PageHelpful } from "@/components/docs/PageHelpful";
-import { CTASection } from "@/components/docs/CTASection";
+import { PageHelpful } from "@/components/docs/shared/PageHelpful";
+import { CTASection } from "@/components/docs/shared/CTASection";
 
 export const SharingFileContainer = React.memo(() => {
     const { currentPage } = useDocs();

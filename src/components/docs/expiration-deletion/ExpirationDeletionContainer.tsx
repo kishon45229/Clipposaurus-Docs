@@ -3,12 +3,12 @@
 import React from "react";
 import { useDocs } from "@/contexts/DocsContext";
 import type { DocsPage, DocsPageSection } from "@/types";
-import { SectionHeadline } from "@/components/docs/SectionHeadline";
+import { SectionHeadline } from "@/components/docs/shared/SectionHeadline";
 import { ExpirationDeletionOptionsSection } from "@/components/docs/expiration-deletion/ExpirationDeletionOptionsSection";
 import { TTLEnforcementSection } from "@/components/docs/expiration-deletion/TTLEnforcementSection";
 import { NoBackupsSection } from "@/components/docs/expiration-deletion/NoBackupsSection";
-import { CTASection } from "@/components/docs/CTASection";
-import { PageHelpful } from "@/components/docs/PageHelpful";
+import { CTASection } from "@/components/docs/shared/CTASection";
+import { PageHelpful } from "@/components/docs/shared/PageHelpful";
 
 export const ExpirationDeletionContainer = React.memo(() => {
     const { currentPage } = useDocs();

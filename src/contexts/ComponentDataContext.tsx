@@ -3,12 +3,16 @@
 import React from "react";
 import { getComponentData } from "@/services/componentDataService";
 import { DocsComponent, ChangelogComponent } from "@/types";
+import type { FooterComponent } from "@/components/footer/footer.types";
+import type { NavbarComponent } from "@/components/navbar/navbar.types";
 
-export type ComponentDataType = DocsComponent | ChangelogComponent;
+export type ComponentDataType = DocsComponent | ChangelogComponent | NavbarComponent | FooterComponent;
 
 export type ComponentTypeMap = {
     DocsComponent: DocsComponent;
     ChangelogComponent: ChangelogComponent;
+    FooterComponent: FooterComponent;
+    NavbarComponent: NavbarComponent;
 };
 
 interface ComponentDataContextType {
@@ -142,5 +146,37 @@ export function useChangelogComponent() {
         data: cachedData.ChangelogComponent as ChangelogComponent,
         isLoading: loadingStates.ChangelogComponent || false,
         error: errorStates.ChangelogComponent,
+    };
+}
+
+export function useNavbarComponent() {
+    const { getComponentData, cachedData, loadingStates, errorStates } = useComponentData();
+
+    React.useEffect(() => {
+        if (!cachedData.NavbarComponent && !loadingStates.NavbarComponent && !errorStates.NavbarComponent) {
+            getComponentData("NavbarComponent").catch(console.error);
+        }
+    }, [cachedData.NavbarComponent, loadingStates.NavbarComponent, errorStates.NavbarComponent, getComponentData]);
+
+    return {
+        data: cachedData.NavbarComponent as NavbarComponent,
+        isLoading: loadingStates.NavbarComponent || false,
+        error: errorStates.NavbarComponent,
+    };
+}
+
+export function useFooterComponent() {
+    const { getComponentData, cachedData, loadingStates, errorStates } = useComponentData();
+
+    React.useEffect(() => {
+        if (!cachedData.FooterComponent && !loadingStates.FooterComponent && !errorStates.FooterComponent) {
+            getComponentData("FooterComponent").catch(console.error);
+        }
+    }, [cachedData.FooterComponent, loadingStates.FooterComponent, errorStates.FooterComponent, getComponentData]);
+
+    return {
+        data: cachedData.FooterComponent as FooterComponent,
+        isLoading: loadingStates.FooterComponent || false,
+        error: errorStates.FooterComponent,
     };
 }

@@ -8,10 +8,10 @@ import { DesignSection } from "@/components/docs/introduction/DesignSection";
 import { ContentTypesSection } from "@/components/docs/introduction/ContentTypesSection";
 import { PrivacySection } from "@/components/docs/introduction/PrivacySection";
 import { PlatformSection } from "@/components/docs/introduction/PlatformSection";
-import { UseCaseSection } from "@/components/docs/UseCaseSection";
-import { CTASection } from "@/components/docs/CTASection";
-import { SectionHeadline } from "@/components/docs/SectionHeadline";
-import { PageHelpful } from "@/components/docs/PageHelpful";
+import { UseCaseSection } from "@/components/docs/shared/UseCaseSection";
+import { CTASection } from "@/components/docs/shared/CTASection";
+import { SectionHeadline } from "@/components/docs/shared/SectionHeadline";
+import { PageHelpful } from "@/components/docs/shared/PageHelpful";
 
 export const IntroductionContainer = React.memo(() => {
   const { currentPage } = useDocs();

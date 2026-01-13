@@ -4,9 +4,9 @@ import type { DocsPage, DocsPageSection } from "@/types";
 import { EncryptionSectionTemplate } from "@/components/docs/encryption/EncryptionSectionTemplate";
 import { LocalEncryptionSection } from "@/components/docs/encryption/LocalEncryptionSection";
 import { LocalDecryptionSection } from "@/components/docs/encryption/LocalDecryptionSection";
-import { CTASection } from "@/components/docs/CTASection";
-import { SectionHeadline } from "@/components/docs/SectionHeadline";
-import { PageHelpful } from "@/components/docs/PageHelpful";
+import { CTASection } from "@/components/docs/shared/CTASection";
+import { SectionHeadline } from "@/components/docs/shared/SectionHeadline";
+import { PageHelpful } from "@/components/docs/shared/PageHelpful";
 
 export const EncryptionContainer = React.memo(() => {
     const { currentPage } = useDocs();

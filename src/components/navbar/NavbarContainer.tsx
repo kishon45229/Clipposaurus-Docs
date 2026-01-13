@@ -1,23 +1,17 @@
 "use client";
 
-import React from "react";
-import { NavbarBrand } from "@/components/navbar/NavbarBrand";
-import { NavbarLinks } from "@/components/navbar/NavbarLinks";
-import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
-import { HamburgerMenu } from "./HamburgerMenu";
+import { useNavbar } from "@/contexts/NavbarContext"
+import { ComponentError } from "@/components/common/ComponentError";
+import { NavbarContent } from "@/components/navbar/NavbarContent";
+import { NavbarSkeleton } from "@/components/skeleton/NavbarSkeleton";
+
+const COMPONENT_ID = "NavbarComponent" as const;
 
 export const NavbarContainer = () => {
-    return (
-        <div className="max-w-480 h-full mx-auto px-2 sm:px-4">
-            <div className="flex items-center justify-between h-full lg:hidden gap-2">
-                <HamburgerMenu />
-                <NavbarBrand />
-                <AnimatedThemeToggler className="bg-transparent text-zinc-950 hover:bg-none hover:text-emerald-700 dark:text-zinc-200 dark:hover:text-emerald-300" />
-            </div>
-            <div className="hidden items-center justify-between h-full lg:flex gap-4">
-                <NavbarBrand />
-                <NavbarLinks />
-            </div>
-        </div>
-    );
-};
+    const { data, isLoading, error } = useNavbar();
+
+    if (isLoading || !data) return <NavbarSkeleton />;
+    if (error) return <ComponentError componentId={COMPONENT_ID} />;
+
+    return <NavbarContent />
+}

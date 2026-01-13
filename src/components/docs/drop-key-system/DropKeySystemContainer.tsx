@@ -3,12 +3,12 @@
 import React from "react";
 import { useDocs } from "@/contexts/DocsContext";
 import type { DocsPage, DocsPageSection } from "@/types";
-import { SectionHeadline } from "@/components/docs/SectionHeadline";
+import { SectionHeadline } from "@/components/docs/shared/SectionHeadline";
 import { KeySectionTemplate } from "@/components/docs/drop-key-system/KeySectionTemplate";
 import { CompleteKeySection } from "@/components/docs/drop-key-system/CompleteKeySection";
 import { SharingGuidelinesSection } from "@/components/docs/drop-key-system/SharingGuidelinesSection";
-import { CTASection } from "@/components/docs/CTASection";
-import { PageHelpful } from "@/components/docs/PageHelpful";
+import { CTASection } from "@/components/docs/shared/CTASection";
+import { PageHelpful } from "@/components/docs/shared/PageHelpful";
 
 export const DropKeySystemContainer = React.memo(() => {
     const { currentPage } = useDocs();

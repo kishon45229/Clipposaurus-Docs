@@ -3,11 +3,11 @@
 import React from "react";
 import { useDocs } from "@/contexts/DocsContext";
 import type { DocsPage, DocsPageSection } from "@/types";
-import { StepsSection } from "@/components/docs/StepsSection";
+import { StepsSection } from "@/components/docs/shared/StepsSection";
 import { ProTipsSection } from "@/components/docs/quick-start/ProTipsSection";
-import { CTASection } from "@/components/docs/CTASection";
-import { SectionHeadline } from "@/components/docs/SectionHeadline";
-import { PageHelpful } from "@/components/docs/PageHelpful";
+import { CTASection } from "@/components/docs/shared/CTASection";
+import { SectionHeadline } from "@/components/docs/shared/SectionHeadline";
+import { PageHelpful } from "@/components/docs/shared/PageHelpful";
 
 export const QuickStartContainer = React.memo(() => {
     const { currentPage } = useDocs();
