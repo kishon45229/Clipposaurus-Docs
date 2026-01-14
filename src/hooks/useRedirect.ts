@@ -78,6 +78,7 @@ export function useRedirects(): RedirectsReturn {
     window.location.href = `mailto:${CONTACT_EMAIL}`;
   }, []);
 
+  // CREATE DROP
   const handleRedirectToCreateDrop = React.useCallback(() => {
     window.location.href = APP_URL + "/create-drop";
   }, []);

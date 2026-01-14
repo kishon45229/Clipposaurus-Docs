@@ -2,6 +2,10 @@ export const APP_URL =
   process.env.NODE_ENV === "production"
     ? process.env.NEXT_PUBLIC_PRODUCTION_APP_URL
     : process.env.NEXT_PUBLIC_DEVELOPMENT_APP_URL;
+export const DOCS_URL =
+  process.env.NODE_ENV === "production"
+    ? process.env.NEXT_PUBLIC_PRODUCTION_DOCS_URL
+    : process.env.NEXT_PUBLIC_DEVELOPMENT_DOCS_URL;
 export const MARKETING_URL =
   process.env.NODE_ENV === "production"
     ? process.env.NEXT_PUBLIC_PRODUCTION_MARKETING_URL
