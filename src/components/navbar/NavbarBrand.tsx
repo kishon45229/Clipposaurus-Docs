@@ -12,7 +12,7 @@ export const NavbarBrand = () => {
 
     return (
         <Link href="/" className="group flex items-center cursor-target gap-3 pr-2">
-            <div className="relative flex items-center justify-center w-8 h-8 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-600 shadow-lg shadow-emerald-500/30 group-hover:shadow-emerald-500/40 transition-all duration-300">
+            <div className="relative flex items-center justify-center w-10 h-10 rounded-xl transition-all duration-300">
                 <Image
                     src="/icon0.svg"
                     alt="Clipposaurus Logo"
