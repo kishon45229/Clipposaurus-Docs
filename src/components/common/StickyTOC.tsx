@@ -28,7 +28,7 @@ export const StickyTOC = React.memo<StickyTOCProps>(({ title, items, activeSecti
                             <li key={item.id}>
                                 <a
                                     href={`#${item.id}`}
-                                    className={`block transition-colors ${isActive
+                                    className={`block transition-colors w-fit cursor-target ${isActive
                                         ? "text-emerald-600 dark:text-emerald-400 font-medium"
                                         : "text-zinc-600 dark:text-zinc-400 hover:text-emerald-600 dark:hover:text-emerald-400"
                                         }`}

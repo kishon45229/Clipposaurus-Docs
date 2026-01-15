@@ -16,7 +16,7 @@ export const ResourcesMenu = () => {
     const { links, menus } = data;
     const { resources } = links;
     const { resourcesDropDown } = menus;
-    const { changelog, terms } = resourcesDropDown;
+    const { changelog, terms, support } = resourcesDropDown;
 
     return (
         <NavigationMenu viewport={false} className="relative z-50">
@@ -43,8 +43,8 @@ export const ResourcesMenu = () => {
                             <NavItem
                                 onClick={handleRedirectToGitHubSponsor}
                                 icon={HeartHandshake}
-                                title={terms.title}
-                                description={terms.description}
+                                title={support.title}
+                                description={support.description}
                                 highlight
                             />
                         </ul>
