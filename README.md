@@ -25,8 +25,8 @@ Visit the live documentation at [https://docs.clipposaurus.com](https://docs.cli
 
 ## Repositories
 
-- To visit the marketing repository, visit [https://github.com/kishon45229/Clipposaurus.git](https://github.com/kishon45229/Clipposaurus.git)
-- To visit the docs repository, visit [https://github.com/kishon45229/Clipposaurus-Marketing.git](https://github.com/kishon45229/Clipposaurus-Marketing.git)
+- To visit the app repository, visit [https://github.com/kishon45229/Clipposaurus.git](https://github.com/kishon45229/Clipposaurus.git)
+- To visit the marketing repository, visit [https://github.com/kishon45229/Clipposaurus-Marketing.git](https://github.com/kishon45229/Clipposaurus-Marketing.git)
 
 ## License
 
