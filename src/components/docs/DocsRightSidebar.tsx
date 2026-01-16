@@ -56,13 +56,12 @@ export const DocsRightSidebar = () => {
                                             isActive={isActive}
                                             className={`
                                                 transition-all duration-200
-                                                rounded-xl text-sm cursor-target
+                                                rounded-xl px-3 py-2 text-sm cursor-target
                                                 ${isActive
-                                                    ? "bg-zinc-800  data-[active=true]:text-emerald-500 shadow-inner py-5"
-                                                    : "text-zinc-900 dark:text-zinc-300 hover:bg-zinc-800/40 hover:text-emerald-300"
+                                                    ? "bg-zinc-800 data-[active=true]:bg-zinc-200 dark:data-[active=true]:bg-zinc-900 data-[active=true]:text-emerald-500 shadow-inner"
+                                                    : "text-zinc-900 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-800/40"
                                                 }
                                             `}
-                                            style={{ paddingLeft: `${paddingLeft + 8}px` }}
                                         >
                                             {heading.title}
                                         </SidebarMenuButton>
