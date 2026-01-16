@@ -8,7 +8,7 @@ This repository specifically contains the documentation and changelog pages for 
 
 Clipposaurus is your instant, zero-signup, open-source digital clipboard with true end-to-end encryption. Share text, code, and files (up to 50MB total) across any device in seconds by creating a Drop. Your Drop lives for up to 1 hour — then it's automatically and permanently erased. We can't see your content, track you, or recover anything later. Privacy isn't a feature here — it's the foundation.
 
-> **⚠️ Beta Notice:** Clipposaurus is currently in beta testing. You may encounter errors, bugs, or temporary service unavailability as we improve the platform. Please report any issues you experience.
+> **Beta Notice:** Clipposaurus is currently in beta testing. You may encounter errors, bugs, or temporary service unavailability as we improve the platform. Please report any issues you experience.
 
 ### Key Features
 
@@ -25,7 +25,7 @@ Visit the live documentation at [https://docs.clipposaurus.com](https://docs.cli
 
 ## Repositories
 
-- To visit the app repository, visit [https://github.com/kishon45229/Clipposaurus.git](https://github.com/kishon45229/Clipposaurus.git)
+- To visit the app repository, visit [https://github.com/kishon45229/Clipposaurus-App.git](https://github.com/kishon45229/Clipposaurus-App.git)
 - To visit the marketing repository, visit [https://github.com/kishon45229/Clipposaurus-Marketing.git](https://github.com/kishon45229/Clipposaurus-Marketing.git)
 
 ## License
