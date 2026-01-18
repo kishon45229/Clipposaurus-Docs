@@ -195,24 +195,24 @@
         },
         {
           "id": "use-cases",
-          "title": "Who Uses Clipposaurus?",
-          "description": "Clipposaurus is designed for anyone who needs to move information quickly, securely, and without friction. Here's how different people use it daily:",
+          "title": "Perfect For These Moments",
+          "description": "Clipposaurus shines when you need to share something quickly without the hassle of collecting contact info or creating accounts. Here's when it's your best friend:",
           "data": [
             {
-              "title": "Students",
-              "quote": "Share notes, assignments, and screenshots between devices without emailing yourself or logging into apps."
+              "title": "One-Time Sharing",
+              "quote": "Share something once and it's gone forever. Perfect for temporary info that doesn't need to stick around."
             },
             {
-              "title": "Developers",
-              "quote": "Exchange code snippets while pair programming, share logs securely, or transfer code snippets in restricted environments."
+              "title": "In-Person Exchanges",
+              "quote": "Meeting someone face-to-face? Just say the Drop Key out loud — no need to exchange emails or phone numbers."
             },
             {
-              "title": "Privacy-Focused Users",
-              "quote": "Move sensitive documents, passwords, and private notes without trusting tech giants or cloud storage providers."
+              "title": "Group Sharing Made Easy",
+              "quote": "Share with 5, 10, or more people at once. Just announce one Drop Key — no group chats, no email lists required."
             },
             {
-              "title": "Everyday Users",
-              "quote": "Move things between phone, laptop, tablet, or work setup — perfect for people constantly switching devices."
+              "title": "Quick Device Switching",
+              "quote": "Move something from your phone to your laptop in seconds. No emailing yourself or fumbling with cloud apps."
             }
           ]
         },
@@ -1155,20 +1155,24 @@
           "description": "Discover how people use Clipposaurus text sharing for everything from personal notes to professional collaboration, all while maintaining complete privacy.",
           "data": [
             {
-              "title": "Students & Researchers",
-              "quote": "Share study notes between devices. Collaborate on assignments without email chains. Move research content between phone, tablet, and laptop effortlessly."
+              "title": "Students & Study Groups",
+              "quote": "Share lecture notes with classmates instantly — no need to collect everyone's email. Perfect for study groups where you want to drop the key once and everyone grabs it. Move notes between your phone and laptop without any cloud sync hassle."
             },
             {
-              "title": "Business Professionals",
-              "quote": "Meeting minutes without corporate email. Project specifications shared securely. Quick notes between team members. Temporary document sharing."
+              "title": "Meeting Organizers",
+              "quote": "Drop meeting minutes or agendas in seconds. Just announce the Drop Key to everyone in the room — no distribution lists needed. Perfect for one-time sharing that disappears after the meeting."
             },
             {
-              "title": "Content Creators",
-              "quote": "Draft articles across devices. Share blog posts for review. Collaborate on scripts and content. Move ideas between phone notes and computer."
+              "title": "Workshop & Event Leaders",
+              "quote": "Share resources with 50+ attendees by writing one Drop Key on a whiteboard. No need to collect emails or create accounts. Everyone gets access instantly and you're done."
             },
             {
-              "title": "Privacy-Conscious Users",
-              "quote": "Share sensitive information without data collection. Temporary communication without permanent records. Zero-trust sharing for personal content."
+              "title": "Quick Device Transfers",
+              "quote": "Move text from your phone to laptop in seconds. No emailing yourself or messing with cloud services. Just create a Drop on one device, open it on another — simple as that."
+            },
+            {
+              "title": "Privacy-First Users",
+              "quote": "Share sensitive info that needs to disappear after reading. Perfect for temporary sharing without leaving permanent digital traces or needing to exchange contact details."
             }
           ]
         },
@@ -1335,20 +1339,24 @@
           "description": "Discover how developers use Clipposaurus for everything from quick debugging help to secure code review, all while maintaining complete privacy and perfect formatting.",
           "data": [
             {
-              "title": "Software Developers",
-              "quote": "Share debugging code with teammates. Quick snippet sharing during pair programming. Code review without corporate email trails. Secure sharing of sensitive configurations."
+              "title": "Team Meetings & Standups",
+              "quote": "Drop a code snippet during standup and everyone grabs it. No more 'I'll Slack that to you later' — just say the Drop Key once and you're done. Perfect for in-person or remote meetings."
             },
             {
-              "title": "Students & Educators",
-              "quote": "Assignment code sharing with instructors. Collaborative coding exercises. Study group code review sessions. Share examples and solutions securely."
+              "title": "Coding Workshops & Bootcamps",
+              "quote": "Share code examples with 30+ students by writing one Drop Key on screen. No need to collect emails or set up group access. Everyone copies the key and gets the code instantly."
             },
             {
-              "title": "DevOps Engineers",
-              "quote": "Script sharing across different environments. Configuration code distribution. Quick deployment code sharing. Troubleshooting script collaboration."
+              "title": "Quick Debugging Help",
+              "quote": "Need to share an error log or snippet with a colleague? Create a Drop, share the key verbally or via chat — no repo commits or file attachments needed. It disappears after they grab it."
             },
             {
-              "title": "Open Source Contributors",
-              "quote": "Share code patches without GitHub accounts. Quick prototype sharing. Cross-platform script distribution. Secure code snippet collaboration."
+              "title": "Conference & Meetup Demos",
+              "quote": "Present code at a meetup? Display the Drop Key on your slide and everyone in the room can access it immediately. No GitHub accounts, no email signup, just instant sharing."
+            },
+            {
+              "title": "Freelancer & Client Sharing",
+              "quote": "Share code snippets with clients without asking for their email or creating accounts. Perfect for one-time shares that don't need permanent storage or complex permissions."
             }
           ]
         },
@@ -1507,7 +1515,8 @@
               "title": "Step 3: Retrieve Content",
               "items": [
                 "Click **Unlock Drop** to begin secure retrieval. The encrypted content is downloaded and decrypted locally in your browser using the drop key.",
-                "This client-side decryption ensures that our servers never see your original content. The process is lightning-fast, and your content appears instantly."],
+                "This client-side decryption ensures that our servers never see your original content. The process is lightning-fast, and your content appears instantly."
+              ],
               "screenshot": "/docs/screenshots/access-step3-retrieve.gif"
             },
             {
@@ -1534,20 +1543,24 @@
           "description": "Discover how people use Clipposaurus content access for quick note retrieval, all with complete privacy.",
           "data": [
             {
-              "title": "Remote Team Collaboration",
-              "quote": "Access code snippets from any location. Retrieve meeting notes on mobile devices. Download design assets without corporate email. Secure document sharing across time zones."
+              "title": "Workshop Attendees",
+              "quote": "Someone wrote a Drop Key on the whiteboard? Just type it in and grab the materials instantly. No signup forms, no email required — just instant access to what you need."
             },
             {
-              "title": "Student & Academic Use",
-              "quote": "Access shared study note materials instantly. Cross-platform access for group projects."
+              "title": "Meeting Participants",
+              "quote": "Your colleague shared a Drop Key in the meeting? Open it on your phone or laptop right away. Perfect for grabbing notes, links, or code snippets without waiting for email follow-ups."
             },
             {
-              "title": "Creative Professionals",
-              "quote": "Access portfolio assets on mobile. Secure creative asset distribution."
+              "title": "Students in Class",
+              "quote": "Teacher announced a Drop Key? Everyone in the room can access the materials at the same time. No need to share personal emails or create accounts — just type the key and you're in."
             },
             {
-              "title": "Privacy-Focused Users",
-              "quote": "Access sensitive documents without data collection. Retrieve notes with complete anonymity."
+              "title": "Quick Device Transfers",
+              "quote": "Need to move something from your phone to your computer? Create a Drop on one device, type the key on the other — done in seconds without any cloud services or cables."
+            },
+            {
+              "title": "One-Time Access",
+              "quote": "Someone shared something that auto-deletes after you view it? Perfect for sensitive info that shouldn't stick around. Access it once and it's gone forever — no traces left."
             }
           ]
         },
