@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useFooter } from "@/context/FooterContext";
+import { useFooter } from "@/contexts/FooterContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { Button } from "@/components/ui/button";
