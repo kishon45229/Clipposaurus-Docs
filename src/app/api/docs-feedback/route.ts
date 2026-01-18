@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-// import { upstashRedis } from "@/lib/redis";
+import { incrementFeedback } from "@/lib/redis";
 
 export async function POST(request: NextRequest) {
   try {
@@ -8,25 +8,21 @@ export async function POST(request: NextRequest) {
     if (!pageId || !["like", "dislike"].includes(type)) {
       return NextResponse.json(
         { error: "Invalid request. pageId and type (like/dislike) required." },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
-    const key = `docs-feedback:${pageId}`;
-    // const counts = await upstashRedis.hgetall(key);
+    const feedbackType = type === "like" ? "likes" : "dislikes";
+    await incrementFeedback(pageId, feedbackType);
 
     return NextResponse.json({
       success: true,
-      counts: {
-        // likes: counts?.likes || 0,
-        // dislikes: counts?.dislikes || 0,
-      },
     });
   } catch (error) {
     console.error("Error updating docs feedback:", error);
     return NextResponse.json(
       { error: "Internal server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -39,25 +35,18 @@ export async function GET(request: NextRequest) {
     if (!pageId) {
       return NextResponse.json(
         { error: "pageId query parameter required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
-    const key = `docs-feedback:${pageId}`;
-    // const counts = await upstashRedis.hgetall(key);
-
     return NextResponse.json({
       success: true,
-      // counts: {
-      //   likes: counts?.likes || 0,
-      //   dislikes: counts?.dislikes || 0,
-      // },
     });
   } catch (error) {
     console.error("Error fetching docs feedback:", error);
     return NextResponse.json(
       { error: "Internal server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
