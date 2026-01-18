@@ -8,8 +8,12 @@ import {
   GITHUB_SPONSOR_URL,
   CONTACT_EMAIL,
 } from "@/lib/urls";
+import { sendRateLimitRequest } from "@/services/rateLimitService";
 
 interface RedirectsReturn {
+  showRateLimitDialog: boolean;
+  handleRateLimitDialogBoxOpenChange: (open: boolean) => void;
+
   handleRedictToCurrentPageHome: () => void;
   handleRedirectToApp: () => void;
   handleRedirectToGitHub: () => void;
@@ -26,6 +30,17 @@ interface RedirectsReturn {
 }
 
 export function useRedirects(): RedirectsReturn {
+  const [showRateLimitDialog, setShowRateLimitDialog] = React.useState(false);
+
+  const handleRateLimitDialogBoxOpenChange = React.useCallback(
+    (open: boolean) => {
+      if (!open && !showRateLimitDialog) {
+        setShowRateLimitDialog(false);
+      }
+    },
+    [showRateLimitDialog],
+  );
+
   // Home
   const handleRedictToCurrentPageHome = React.useCallback(() => {
     window.location.href = "/";
@@ -56,7 +71,7 @@ export function useRedirects(): RedirectsReturn {
     window.open(
       GITHUB_REPO_URL + "/discussions",
       "_blank",
-      "noopener noreferrer"
+      "noopener noreferrer",
     );
   }, []);
 
@@ -86,16 +101,29 @@ export function useRedirects(): RedirectsReturn {
   }, []);
 
   // CREATE DROP
-  const handleRedirectToCreateDrop = React.useCallback(() => {
-    window.location.href = APP_URL + "/create-drop";
+  const handleRedirectToCreateDrop = React.useCallback(async () => {
+    const rateLimitResult = await sendRateLimitRequest();
+    if (rateLimitResult.allowed) {
+      window.location.href = APP_URL + "/create-drop";
+      return;
+    }
+    setShowRateLimitDialog(true);
   }, []);
 
   // UNLOCK DROP
-  const handleRedirectToUnlockDrop = React.useCallback(() => {
-    window.location.href = APP_URL + "/unlock-drop";
+  const handleRedirectToUnlockDrop = React.useCallback(async () => {
+    const rateLimitResult = await sendRateLimitRequest();
+    if (rateLimitResult.allowed) {
+      window.location.href = APP_URL + "/unlock-drop";
+      return;
+    }
+    setShowRateLimitDialog(true);
   }, []);
 
   return {
+    showRateLimitDialog,
+    handleRateLimitDialogBoxOpenChange,
+
     handleRedictToCurrentPageHome,
     handleRedirectToApp,
     handleRedirectToGitHub,
@@ -108,6 +136,6 @@ export function useRedirects(): RedirectsReturn {
     handleRedirectToGitHubSponsor,
     handleRedirectToCreateDrop,
     handleRedirectToUnlockDrop,
-    handleRedirectToDocs
+    handleRedirectToDocs,
   };
 }

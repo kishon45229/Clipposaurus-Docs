@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { upstashRedis } from "@/lib/redis";
+// import { upstashRedis } from "@/lib/redis";
 
 export async function POST(request: NextRequest) {
   try {
@@ -13,13 +13,13 @@ export async function POST(request: NextRequest) {
     }
 
     const key = `docs-feedback:${pageId}`;
-    const counts = await upstashRedis.hgetall(key);
+    // const counts = await upstashRedis.hgetall(key);
 
     return NextResponse.json({
       success: true,
       counts: {
-        likes: counts?.likes || 0,
-        dislikes: counts?.dislikes || 0,
+        // likes: counts?.likes || 0,
+        // dislikes: counts?.dislikes || 0,
       },
     });
   } catch (error) {
@@ -44,14 +44,14 @@ export async function GET(request: NextRequest) {
     }
 
     const key = `docs-feedback:${pageId}`;
-    const counts = await upstashRedis.hgetall(key);
+    // const counts = await upstashRedis.hgetall(key);
 
     return NextResponse.json({
       success: true,
-      counts: {
-        likes: counts?.likes || 0,
-        dislikes: counts?.dislikes || 0,
-      },
+      // counts: {
+      //   likes: counts?.likes || 0,
+      //   dislikes: counts?.dislikes || 0,
+      // },
     });
   } catch (error) {
     console.error("Error fetching docs feedback:", error);
