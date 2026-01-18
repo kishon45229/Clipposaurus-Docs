@@ -65,11 +65,6 @@
           "href": "/sharing-code"
         },
         {
-          "id": "sharing-files",
-          "title": "Sharing Files",
-          "href": "/sharing-files"
-        },
-        {
           "id": "access-drop",
           "title": "Access Drop",
           "href": "/access-drop"
@@ -82,7 +77,7 @@
       "id": "introduction",
       "header": {
         "title": "Welcome to Clipposaurus",
-        "description": "Clipposaurus is your instant, zero-signup, open-source digital clipboard with true end-to-end encryption. Share text, code, and files (up to 50MB total) across any device in seconds by creating a Drop. Your Drop lives for up to 1 hour — then it's automatically and permanently erased. We can't see your content, track you, or recover anything later. Privacy isn't a feature here — it's the foundation."
+        "description": "Clipposaurus is your instant, zero-signup, open-source digital clipboard with true end-to-end encryption. Share text and code across any device in seconds by creating a Drop. Your Drop lives for up to 1 hour — then it's automatically and permanently erased. We can't see your content, track you, or recover anything later. Privacy isn't a feature here — it's the foundation."
       },
       "sections": [
         {
@@ -94,7 +89,7 @@
             "rows": [
               ["Account required", "Instant access — no signup, no login"],
               [
-                "They can see your files",
+                "They can see your content",
                 "Zero-knowledge: only YOU control your key"
               ],
               [
@@ -126,7 +121,7 @@
             {
               "title": "Store Only Encrypted Data",
               "icon": "Server",
-              "description": "We store meaningless encrypted blobs — not readable files."
+              "description": "We store meaningless encrypted blobs — not readable content."
             },
             {
               "title": "Decrypt on Your Device",
@@ -143,7 +138,7 @@
         {
           "id": "content-types",
           "title": "What Can You Share?",
-          "description": "Share anything from simple notes to complex code snippets or files. Clipposaurus is built to handle your everyday workflow securely and instantly.",
+          "description": "Share anything from simple notes to code snippets. Clipposaurus is built to handle your everyday workflow securely and instantly.",
           "data": [
             {
               "title": "Text",
@@ -156,21 +151,13 @@
                 "Automatic language detection",
                 "Developer-friendly formatting"
               ]
-            },
-            {
-              "title": "Files",
-              "items": [
-                "Up to 50MB total",
-                "Any file type",
-                "Drag-and-drop or upload"
-              ]
             }
           ]
         },
         {
           "id": "privacy",
           "title": "We Can't Spy — Even If We Tried",
-          "description": "Many platforms collect your data quietly. Clipposaurus collects nothing — not your identity, not your files, not your usage history. We designed the platform so we're blind by default.",
+          "description": "Many platforms collect your data quietly. Clipposaurus collects nothing — not your identity, not your content, not your usage history. We designed the platform so we're blind by default.",
           "data": [
             {
               "title": "What We DON'T Collect",
@@ -217,7 +204,7 @@
             },
             {
               "title": "Developers",
-              "quote": "Exchange code snippets while pair programming, share logs securely, or transfer files in restricted environments."
+              "quote": "Exchange code snippets while pair programming, share logs securely, or transfer code snippets in restricted environments."
             },
             {
               "title": "Privacy-Focused Users",
@@ -263,7 +250,7 @@
         {
           "id": "sharing-content",
           "title": "Create a Drop",
-          "description": "Follow these simple steps to create a Drop to share text, code, or files using Clipposaurus.",
+          "description": "Follow these simple steps to create a Drop to share text or code snippets using Clipposaurus.",
           "data": [
             {
               "title": "Step 1: Visit Clipposaurus",
@@ -285,7 +272,6 @@
               "items": [
                 "**Text** — type or paste anything. Unlimited characters, formatting preserved.",
                 "**Code** — paste a snippet. Auto-highlighting detects 20+ languages.",
-                "**Files** — drag & drop or upload any file type (up to 50MB total).",
                 "You can add one type or mix all three in the same Drop."
               ],
               "screenshot": "/docs/screenshots/step3-add-content.gif"
@@ -345,7 +331,7 @@
               "title": "Step 3: Get Access to Your Content",
               "items": [
                 "Your content decrypts instantly in your browser — never on our servers.",
-                "Copy text or code, download files.",
+                "Copy text or code",
                 "If the Drop was set to “delete after access,” it will be erased immediately. Otherwise, it remains available until the retention time expires."
               ],
               "screenshot": "/docs/screenshots/step7-access-content.gif"
@@ -369,8 +355,7 @@
             {
               "title": "Optimization Tips",
               "items": [
-                "Combine text, code, and files in one Drop for convenience.",
-                "Rename files before uploading for better organization.",
+                "Combine text and code in one Drop for convenience.",
                 "Test your Drop Key once if you want peace of mind.",
                 "Always remember the Drops expire automatically after your chosen time. Don't forget to access them before then!"
               ]
@@ -380,7 +365,6 @@
               "items": [
                 "If access fails, double-check the Drop Key spelling.",
                 "If the Drop expired, it cannot be recovered — by design.",
-                "Ensure a stable connection for large file uploads.",
                 "If you can't decrypt, verify you're using the correct Drop Key."
               ]
             }
@@ -427,7 +411,7 @@
           "data": [
             {
               "heading": "Your Browser Is the Runtime",
-              "text": "Clipposaurus doesn't use backend rendering, preprocessing, or content inspection. Everything—from text editing to code highlighting to file parsing—runs inside the browser using Web APIs."
+              "text": "Clipposaurus doesn't use backend rendering, preprocessing, or content inspection. Everything—from text editing to code highlighting runs inside the browser using Web APIs."
             },
             {
               "heading": "Nothing Leaves Your Device Until You Decide",
@@ -475,7 +459,7 @@
             },
             {
               "title": "Local Encryption",
-              "text": "Text, code, and files are encrypted inside your browser. Filenames, metadata, formatting, and content are all sealed inside the ciphertext."
+              "text": "Text and code are encrypted inside your browser. Metadata, formatting, and content are all sealed inside the ciphertext."
             },
             {
               "title": "Upload",
@@ -489,7 +473,7 @@
           "description": "The server stores a single object: the encrypted blob, indexed by the public identifier. No part of the drop key, no metadata, and no content details are visible.",
           "data": {
             "items": [
-              "No knowledge of file names or sizes",
+              "No knowledge of text or code content",
               "No versioning or shadow storage",
               "No pattern recognition or scanning possible"
             ]
@@ -723,7 +707,7 @@
               "title": "How AES-256-GCM Works in Practice?",
               "items": [
                 "Your browser generates a random IV/nonce for each encryption operation. Reusing IVs is dangerous; we always use fresh values.",
-                "Your content (text, code, files) is encrypted with AES-256 using the derived key plus the IV.",
+                "Your content (text or code) is encrypted with AES-256 using the derived key plus the IV.",
                 "GCM also produces an authentication tag. When someone later decrypts the content, this tag is checked to ensure the ciphertext hasn't been altered.",
                 "If any bit of the encrypted data or tag is modified, decryption fails — preventing silent corruption or tampering."
               ]
@@ -759,7 +743,7 @@
             "flow": {
               "title": "Encryption Flow",
               "items": [
-                "You enter or paste your content (text, code, files). Nothing is sent yet.",
+                "You enter or paste your content (text or code). Nothing is sent yet.",
                 "You provide or confirm your three-word drop key.",
                 "PBKDF2 runs in your browser to derive a 256-bit key from your drop key + salt.",
                 "AES-256-GCM encrypts your content locally, producing ciphertext + authentication tag.",
@@ -846,7 +830,7 @@
           "data": [
             {
               "label": "We Never See Your Plaintext",
-              "text": "Your device encrypts everything locally before it is sent. Clipposaurus servers never receive readable text, files, or code."
+              "text": "Your device encrypts everything locally before it is sent. Clipposaurus servers never receive readable text or code."
             },
             {
               "label": "We Never See Your Secret Key",
@@ -891,7 +875,7 @@
               "items": [
                 {
                   "label": "Encrypted Blob",
-                  "text": "This is your content after it has been fully scrambled by your browser. We cannot turn it back into readable text or files."
+                  "text": "This is your content after it has been fully scrambled by your browser. We cannot turn it back into readable text or code."
                 },
                 {
                   "label": "Identifier",
@@ -913,10 +897,6 @@
                 {
                   "label": "Tracking Metadata",
                   "text": "No analytics, fingerprinting, cookies, or behavioral data."
-                },
-                {
-                  "label": "File Details",
-                  "text": "We don't know the file names, sizes, or types — all of it is encrypted."
                 },
                 {
                   "label": "Password or Keys",
@@ -1019,7 +999,7 @@
             },
             {
               "label": "Provider-Level Deletion",
-              "text": "Storage partners (such as hosted databases or file storage systems) apply their own TTL or purge mechanisms, adding a second layer of enforcement."
+              "text": "Storage partners (such as hosted databases) apply their own TTL or purge mechanisms, adding a second layer of enforcement."
             }
           ]
         },
@@ -1251,7 +1231,7 @@
       "id": "sharing-code",
       "header": {
         "title": "Share Code with Perfect Syntax Highlighting",
-        "description": "Learn how to share code snippets, scripts, and programming files securely with Clipposaurus. Features automatic language detection, syntax highlighting, and zero-knowledge encryption for developers."
+        "description": "Learn how to share code snippets securely with Clipposaurus. Features automatic language detection, syntax highlighting, and zero-knowledge encryption for developers."
       },
       "sections": [
         {
@@ -1272,7 +1252,7 @@
               "items": [
                 "Indentation and whitespace maintained exactly",
                 "Special characters and Unicode preserved",
-                "No character limit - share entire files",
+                "No character limit - share entire code",
                 "Real-time preview with syntax highlighting"
               ]
             },
@@ -1290,7 +1270,7 @@
         {
           "id": "sharing-process",
           "title": "How to Share Code Securely",
-          "description": "Follow these steps to securely share any code snippet, script, or programming file with perfect formatting and syntax highlighting.",
+          "description": "Follow these steps to securely share any code snippets with perfect formatting and syntax highlighting.",
           "data": [
             {
               "title": "Step 1: Select Code Mode",
@@ -1303,7 +1283,7 @@
             {
               "title": "Step 2: Add Your Code",
               "items": [
-                "Paste or type your code directly into the editor. Everything from single-line commands to entire application files is supported with no character limitations.",
+                "Paste or type your code directly into the editor. Everything from single-line commands to entire code snippets is supported with no character limitations.",
                 "Watch real-time syntax highlighting as you type. The editor preserves all formatting, indentation, and special characters perfectly while providing a beautiful coding experience."
               ],
               "screenshot": "/docs/screenshots/code-step2-add-content.gif"
@@ -1356,7 +1336,7 @@
           "data": [
             {
               "title": "Software Developers",
-              "quote": "Share debugging code with teammates. Quick snippet sharing during pair programming. Code review without corporate email trails. Secure sharing of sensitive configuration files."
+              "quote": "Share debugging code with teammates. Quick snippet sharing during pair programming. Code review without corporate email trails. Secure sharing of sensitive configurations."
             },
             {
               "title": "Students & Educators",
@@ -1364,7 +1344,7 @@
             },
             {
               "title": "DevOps Engineers",
-              "quote": "Script sharing across different environments. Configuration file distribution. Quick deployment code sharing. Troubleshooting script collaboration."
+              "quote": "Script sharing across different environments. Configuration code distribution. Quick deployment code sharing. Troubleshooting script collaboration."
             },
             {
               "title": "Open Source Contributors",
@@ -1445,209 +1425,8 @@
               "style": "primary"
             },
             {
-              "text": "Learn about file uploads",
-              "href": "/sharing-files",
-              "style": "secondary"
-            }
-          ]
-        }
-      ],
-      "footer": {
-        "nextPage": {
-          "id": "sharing-files",
-          "title": "Sharing Files"
-        },
-        "previousPage": {
-          "id": "sharing-text",
-          "title": "Sharing Text"
-        }
-      }
-    },
-    {
-      "id": "sharing-files",
-      "header": {
-        "title": "Secure File Uploads with Client-Side Encryption",
-        "description": "Learn how to upload and share files securely with Clipposaurus. Support for any file type up to 50MB with client-side encryption, drag-and-drop interface, and automatic security deletion."
-      },
-      "sections": [
-        {
-          "id": "file-features",
-          "title": "What Makes File Sharing Special?",
-          "description": "Clipposaurus file sharing features are designed with security and ease-of-use in mind. Every file is encrypted locally before transmission and stored securely until automatic deletion.",
-          "data": [
-            {
-              "title": "Universal File Support",
-              "items": [
-                "Any file type accepted - documents, images, videos, archives",
-                "Up to 50MB total per Drop for generous file sharing",
-                "Multiple file uploads in a single drop",
-                "Drag-and-drop interface with progress indicators"
-              ]
-            },
-            {
-              "title": "Advanced Security Features",
-              "items": [
-                "Client-side AES-256-GCM encryption before upload",
-                "File names and metadata encrypted and hidden",
-                "Zero-knowledge architecture - servers never see content",
-                "Automatic deletion with no recovery options"
-              ]
-            },
-            {
-              "title": "Professional Upload Experience",
-              "items": [
-                "Real-time upload progress tracking",
-                "Preview support for common formats"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "sharing-process",
-          "title": "How to Upload Files Securely",
-          "description": "Follow these steps to securely upload any files and share them with perfect security and convenience across all devices.",
-          "data": [
-            {
-              "title": "Step 1: Select Files Mode",
-              "items": [
-                "Visit **clipposaurus.com** in any modern browser and click **Create Drop**. No downloads, installations, or accounts required - just open the website and you're ready to start sharing instantly.",
-                "Click the **File** tab to access the file uploader. You can either drag files directly onto the upload area or click to browse and select files from your device. Multiple files can be uploaded together in one drop."
-              ],
-              "screenshot": "/docs/screenshots/files-step1-select-mode.gif"
-            },
-            {
-              "title": "Step 2: Add Your Files",
-              "items": [
-                "Drag and drop files onto the upload area or click to browse. Watch as files are validated locally for size and format compatibility before any upload begins.",
-                "See real-time file list with names, sizes, and status. The system automatically calculates total size and warns if you approach the 50MB limit per drop."
-              ],
-              "screenshot": "/docs/screenshots/files-step2-add-files.gif"
-            },
-            {
-              "title": "Step 3: Preview & Validate",
-              "items": [
-                "Review your file list and see previews for supported formats like images and text files. Remove any files you don't want to include in the drop.",
-                "Check file names and organize as needed. Remember that file names will be encrypted, so use descriptive names that recipients will understand."
-              ],
-              "screenshot": "/docs/screenshots/files-step3-preview.gif"
-            },
-            {
-              "title": "Step 4: Generate Drop Key",
-              "items": [
-                "The system generates the first two words (identifier and system secret) for you. You need to enter the user secret, which can be up to 6-8 characters. For easy recall, choose a memorable word; for better security, use a mix of letters, special characters, and numbers.",
-                "Now you have a Drop Key, for example: apple-beer-ocean. Please save or memorize this key. If you forget it, you cannot access your content anymore."
-              ],
-              "screenshot": "/docs/screenshots/text-step4-create-drop.gif"
-            },
-            {
-              "title": "Step 5: Set Expiration",
-              "items": [
-                "Choose your content retention period: delete after first access(kept for maximum 1 hour), 30 minutes, or 1 hour. These automatic deletion settings provide built-in privacy protection.",
-                "Consider who needs access and when. Delete-after-access works great for one-time sharing, while timed deletion is perfect for temporary collaboration."
-              ],
-              "screenshot": "/docs/screenshots/text-step3-set-expiration.gif"
-            },
-            {
-              "title": "Step 5: Create Your Drop",
-              "items": [
-                "Click **'Create My Drop'** to encrypt and upload your content.",
-                "Your content is encrypted locally using AES-256-GCM before transmission. Our servers only receive encrypted data - we never see your original files."
-              ],
-              "screenshot": "/docs/screenshots/text-step4-create-drop.gif"
-            },
-            {
-              "title": "Step 6: Share Securely",
-              "items": [
-                "Copy your Drop Key and share it through secure channels. The key format is human-friendly like 'apple-beer-ocean' for easy verbal sharing or secure messaging.",
-                "Recipients can access your content by entering the drop key on any device. The decryption happens locally in their browser, maintaining end-to-end security."
-              ],
-              "screenshot": "/docs/screenshots/text-step5-share-key.gif"
-            }
-          ]
-        },
-        {
-          "id": "use-cases",
-          "title": "Real-World File Sharing Examples",
-          "description": "Discover how people use Clipposaurus file uploads for everything from personal photo sharing to professional document collaboration, all with complete privacy.",
-          "data": [
-            {
-              "title": "Creative Professionals",
-              "quote": "Share design files with clients. Send high-resolution images without email limits. Collaborate on video projects. Distribute portfolio files securely without cloud storage."
-            },
-            {
-              "title": "Business Teams",
-              "quote": "Share presentations before meetings. Distribute confidential documents securely. Send large spreadsheets and reports. Temporary file sharing for project collaboration."
-            },
-            {
-              "title": "Developers & Tech Teams",
-              "quote": "Share build artifacts and deployment files. Distribute configuration files securely. Send log files for debugging. Share compressed code archives temporarily."
-            },
-            {
-              "title": "Personal Users",
-              "quote": "Send photos to family without social media. Share documents between devices. Temporary file storage for travel. Send large files without email restrictions."
-            }
-          ]
-        },
-        {
-          "id": "best-practices",
-          "title": "File Security & Organization Tips",
-          "description": "Maximize security and efficiency when uploading files. These best practices ensure your files stay private while being easily accessible to intended recipients.",
-          "data": [
-            {
-              "title": "Organize Before Upload",
-              "text": "Use clear, descriptive file names and organize related files together in one drop"
-            },
-            {
-              "title": "Check File Sizes",
-              "text": "Compress large files if needed and verify total size stays under 50MB per drop"
-            },
-            {
-              "title": "Remove Sensitive Metadata",
-              "text": "Strip personal information from documents and images before uploading"
-            },
-            {
-              "title": "Use Stable Connection",
-              "text": "Ensure reliable internet for large uploads and avoid interruptions"
-            },
-            {
-              "title": "Verify Upload Completion",
-              "text": "Confirm all files uploaded successfully before sharing the drop key"
-            }
-          ]
-        },
-        {
-          "id": "supported-files",
-          "title": "Supported File Types & Formats",
-          "description": "Clipposaurus accepts virtually any file type with no restrictions on format. Perfect for sharing everything from documents to media files with complete security.",
-          "data": {
-            "headers": ["File Category", "Common Formats"],
-            "rows": [
-              ["Documents", "PDF, DOC, DOCX, PPT, PPTX, XLS, XLSX, TXT, RTF"],
-              ["Images", "JPG, PNG, GIF, BMP, TIFF, SVG, WebP, RAW formats"],
-              ["Videos", "MP4, AVI, MOV, WMV, MKV, FLV, WebM, M4V"],
-              ["Audio", "MP3, WAV, FLAC, AAC, OGG, M4A, WMA"],
-              ["Archives", "ZIP, RAR, 7Z, TAR, GZ, BZ2, XZ"],
-              [
-                "Development",
-                "Code files, JSON, XML, SQL, Log files, Config files"
-              ],
-              ["Design", "PSD, AI, SKETCH, FIG, INDD, EPS"],
-              ["Specialized", "CAD files, 3D models, Database files, VM images"]
-            ]
-          }
-        },
-        {
-          "id": "cta",
-          "title": "Ready to Share Files Securely?",
-          "data": [
-            {
-              "text": "Start sharing files now",
-              "href": "/",
-              "style": "primary"
-            },
-            {
-              "text": "Learn about the accessing content",
-              "href": "/access-drop",
+              "text": "Learn about text sharing",
+              "href": "/sharing-text",
               "style": "secondary"
             }
           ]
@@ -1656,11 +1435,11 @@
       "footer": {
         "nextPage": {
           "id": "access-drop",
-          "title": "Accessing Content"
+          "title": "Access Drop"
         },
         "previousPage": {
-          "id": "sharing-code",
-          "title": "Sharing Code"
+          "id": "sharing-text",
+          "title": "Sharing Text"
         }
       }
     },
@@ -1668,7 +1447,7 @@
       "id": "access-drop",
       "header": {
         "title": "Access Shared Content Instantly & Securely",
-        "description": "Learn how to retrieve text, code, and files shared through Clipposaurus using drop keys. Simple access process with client-side decryption and complete privacy protection."
+        "description": "Learn how to retrieve text and code shared through Clipposaurus using drop keys. Simple access process with client-side decryption and complete privacy protection."
       },
       "sections": [
         {
@@ -1681,7 +1460,7 @@
               "items": [
                 "Works on any device with a modern browser",
                 "No downloads, installations, or accounts required",
-                "Access text, code, and files with single drop key",
+                "Access text and code with single drop key",
                 "Cross-platform compatibility guaranteed"
               ]
             },
@@ -1698,8 +1477,7 @@
               "title": "Instant Retrieval",
               "items": [
                 "Lightning-fast content loading",
-                "Real-time syntax highlighting for code",
-                "Bulk file downloads with progress tracking"
+                "Real-time syntax highlighting for code"
               ]
             }
           ]
@@ -1729,15 +1507,14 @@
               "title": "Step 3: Retrieve Content",
               "items": [
                 "Click **Unlock Drop** to begin secure retrieval. The encrypted content is downloaded and decrypted locally in your browser using the drop key.",
-                "Watch the progress indicator as content is fetched and decrypted. Large files show detailed progress while maintaining end-to-end encryption throughout."
-              ],
+                "This client-side decryption ensures that our servers never see your original content. The process is lightning-fast, and your content appears instantly."],
               "screenshot": "/docs/screenshots/access-step3-retrieve.gif"
             },
             {
               "title": "Step 4: View & Download",
               "items": [
-                "Content appears instantly with full formatting preserved. Text content maintains line breaks, code gets syntax highlighting, and files show organized lists.",
-                "Use the copy button for text/code content or download individual files or complete archives. All actions respect the original creator's sharing preferences."
+                "Content appears instantly with full formatting preserved. Text content maintains line breaks and code gets syntax highlighting",
+                "Use the copy button for text/code content. All actions respect the original creator's sharing preferences."
               ],
               "screenshot": "/docs/screenshots/access-step4-view-download.gif"
             },
@@ -1754,23 +1531,23 @@
         {
           "id": "access-scenarios",
           "title": "Real-World Access Examples",
-          "description": "Discover how people use Clipposaurus content access for everything from quick note retrieval to secure file downloads, all with complete privacy.",
+          "description": "Discover how people use Clipposaurus content access for quick note retrieval, all with complete privacy.",
           "data": [
             {
               "title": "Remote Team Collaboration",
-              "quote": "Access project files from any location. Retrieve meeting notes on mobile devices. Download design assets without corporate email. Secure document sharing across time zones."
+              "quote": "Access code snippets from any location. Retrieve meeting notes on mobile devices. Download design assets without corporate email. Secure document sharing across time zones."
             },
             {
               "title": "Student & Academic Use",
-              "quote": "Access shared study materials instantly. Retrieve assignment files from any device. Download research documents securely. Cross-platform access for group projects."
+              "quote": "Access shared study note materials instantly. Cross-platform access for group projects."
             },
             {
               "title": "Creative Professionals",
-              "quote": "Download client files from any location. Access portfolio assets on mobile. Retrieve project files without cloud storage. Secure creative asset distribution."
+              "quote": "Access portfolio assets on mobile. Secure creative asset distribution."
             },
             {
               "title": "Privacy-Focused Users",
-              "quote": "Access sensitive documents without data collection. Retrieve private files with complete anonymity. Download content without permanent storage. Zero-trace file access."
+              "quote": "Access sensitive documents without data collection. Retrieve notes with complete anonymity."
             }
           ]
         },
@@ -1793,7 +1570,7 @@
             },
             {
               "title": "Check Content Safety",
-              "text": "Scan downloaded files with antivirus software before opening, especially executable files"
+              "text": "Always confirm the legitimacy of shared content to avoid phishing or malicious data"
             },
             {
               "title": "Respect Privacy Settings",
@@ -1820,8 +1597,8 @@
       ],
       "footer": {
         "previousPage": {
-          "id": "sharing-files",
-          "title": "Sharing Files"
+          "id": "access-drop",
+          "title": "Accessing Drops"
         }
       }
     }

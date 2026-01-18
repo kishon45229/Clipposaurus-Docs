@@ -1,12 +1,12 @@
 # Clipposaurus Documentation
 
-This is the official documentation for [Clipposaurus](https://app.clipposaurus.com), a secure, zero-knowledge digital clipboard for sharing text, code, and files.
+This is the official documentation for [Clipposaurus](https://app.clipposaurus.com), a secure, zero-knowledge digital clipboard for sharing text and code.
 
 This repository specifically contains the documentation and changelog pages for Clipposaurus.
 
 ## About Clipposaurus
 
-Clipposaurus is your instant, zero-signup, open-source digital clipboard with true end-to-end encryption. Share text, code, and files (up to 50MB total) across any device in seconds by creating a Drop. Your Drop lives for up to 1 hour — then it's automatically and permanently erased. We can't see your content, track you, or recover anything later. Privacy isn't a feature here — it's the foundation.
+Clipposaurus is your instant, zero-signup, open-source digital clipboard with true end-to-end encryption. Share text and code across any device in seconds by creating a Drop. Your Drop lives for up to 1 hour — then it's automatically and permanently erased. We can't see your content, track you, or recover anything later. Privacy isn't a feature here — it's the foundation.
 
 > **Beta Notice:** Clipposaurus is currently in beta testing. You may encounter errors, bugs, or temporary service unavailability as we improve the platform. Please report any issues you experience.
 

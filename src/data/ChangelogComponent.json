@@ -13,7 +13,7 @@
           "items": [
             {
               "title": "Secure Content Sharing",
-              "description": "End-to-end encrypted sharing for text, code, and files with automatic deletion in max 1 hour."
+              "description": "End-to-end encrypted sharing for text and code with automatic deletion in max 1 hour."
             },
             {
               "title": "Drop Words System",
@@ -22,10 +22,6 @@
             {
               "title": "Code Syntax Highlighting",
               "description": "Support for 10+ programming languages with automatic language detection."
-            },
-            {
-              "title": "File Upload Support",
-              "description": "Upload files up to 50MB with secure encrypted storage."
             },
             {
               "title": "No Registration Required",

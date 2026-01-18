@@ -9,30 +9,27 @@ export const siteMetadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
     default:
-      "Clipposaurus Documentation - Complete Guide to Secure File Sharing",
+      "Clipposaurus Documentation - Complete Guide to Secure Content Sharing",
     template: "%s | Clipposaurus Docs",
   },
   description:
-    "Complete documentation for Clipposaurus - Learn how to securely share files, code snippets, and text with zero-knowledge encryption. API reference, guides, and tutorials.",
+    "Complete documentation for Clipposaurus - Learn how to securely share text and code snippets with zero-knowledge encryption.",
   keywords: [
     // Documentation-specific
     "clipposaurus documentation",
     "text sharing guide",
     "code sharing guide",
-    "file sharing guide",
     "encryption documentation",
     "api documentation",
     "developer guide",
     // Feature documentation
-    "how to share files securely",
+    "how to share text securely",
     "zero knowledge encryption guide",
     "drop key tutorial",
     "text encryption guide",
     "code encryption guide",
-    "file encryption guide",
     // Technical documentation
     "end-to-end encryption docs",
-    "secure file transfer guide",
     "secure code transfer guide",
     "secure text transfer guide",
     "privacy tools documentation",
@@ -41,7 +38,7 @@ export const siteMetadata: Metadata = {
     "code sharing tutorial",
     "text sharing tutorial",
     "secure clipboard guide",
-    "temporary file storage guide",
+    "temporary note storage guide",
   ],
   authors: [{ name: "G. Kishon", url: `${BASE_URL}/about` }],
   creator: "G. Kishon",
@@ -61,9 +58,9 @@ export const siteMetadata: Metadata = {
     locale: "en_US",
     url: BASE_URL,
     siteName: "Clipposaurus Documentation",
-    title: "Clipposaurus Documentation - Complete Guide to Secure Text, Code, and File Sharing",
+    title: "Clipposaurus Documentation - Complete Guide to Secure Text and Code Sharing",
     description:
-      "Complete documentation for Clipposaurus - Learn how to securely share files, code snippets, and text with zero-knowledge encryption.",
+      "Complete documentation for Clipposaurus - Learn how to securely share text and code snippets with zero-knowledge encryption.",
     images: [
       {
         url: `${BASE_URL}/og-image.png`,
@@ -78,7 +75,7 @@ export const siteMetadata: Metadata = {
     card: "summary_large_image",
     title: "Clipposaurus Documentation",
     description:
-      "Complete guide to secure, zero-knowledge file and code sharing",
+      "Complete guide to secure, zero-knowledge text and code sharing",
     images: [`${BASE_URL}/twitter-image.png`],
     creator: "@clipposaurus",
     site: "@clipposaurus",

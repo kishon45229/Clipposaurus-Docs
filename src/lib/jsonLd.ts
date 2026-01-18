@@ -9,7 +9,7 @@ export function getSiteJsonLd() {
         "@id": `${url}/#website`,
         name: "Clipposaurus Documentation",
         description:
-          "Complete documentation for Clipposaurus - secure, zero-knowledge file and code sharing platform",
+          "Complete documentation for Clipposaurus - secure, zero-knowledge text and code sharing platform",
         url,
         potentialAction: {
           "@type": "SearchAction",
@@ -45,7 +45,7 @@ export function getSiteJsonLd() {
         "@id": `${url}/#documentation`,
         headline: "Clipposaurus Documentation",
         description:
-          "Complete technical documentation for using Clipposaurus secure file sharing platform",
+          "Complete technical documentation for using Clipposaurus secure text sharing platform",
         datePublished: "2024-01-01",
         dateModified: new Date().toISOString(),
         author: {

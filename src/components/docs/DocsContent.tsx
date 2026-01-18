@@ -9,14 +9,13 @@ import { HowItWorks } from "@/components/docs/how-it-works";
 import { QuickStart } from "@/components/docs/quick-start";
 import { SharingText } from "@/components/docs/sharing-text";
 import { SharingCode } from "@/components/docs/sharing-code";
-import { SharingFiles } from "@/components/docs/sharing-files";
-import { AccessingContent } from "./accessing-content";
-import { EncryptionContainer } from "./encryption/EncryptionContainer";
+import { AccessingContent } from "@/components/docs/accessing-content";
+import { EncryptionContainer } from "@/components/docs/encryption/EncryptionContainer";
 import { DocsHeader } from "@/components/docs/DocsHeader";
 import { DocsFooter } from "@/components/docs/DocsFooter";
-import { DropKeySystem } from "./drop-key-system";
-import { ZeroKnowledge } from "./zero-knowledge";
-import { ExpirationDeletion } from "./expiration-deletion";
+import { DropKeySystem } from "@/components/docs/drop-key-system";
+import { ZeroKnowledge } from "@/components/docs/zero-knowledge";
+import { ExpirationDeletion } from "@/components/docs/expiration-deletion";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 
 export const DocsContent = () => {
@@ -61,8 +60,6 @@ export const DocsContent = () => {
                     <SharingText />
                 ) : currentPage.id === "sharing-code" ? (
                     <SharingCode />
-                ) : currentPage.id === "sharing-files" ? (
-                    <SharingFiles />
                 ) : currentPage.id === "access-drop" ? (
                     <AccessingContent />
                 ) : null}
