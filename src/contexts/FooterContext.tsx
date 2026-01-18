@@ -19,6 +19,7 @@ export interface FooterContextValue {
     handleRedirectToCreateDrop: () => void;
     handleRedirectToUnlockDrop: () => void;
     handleRedirectToGitHubDiscussions: () => void;
+    handleRedirectToDocs: () => void;
 }
 
 const FooterContext = React.createContext<FooterContextValue | undefined>(undefined);
@@ -29,7 +30,7 @@ interface FooterProviderProps {
 
 export function FooterProvider({ children }: FooterProviderProps): React.ReactElement {
     const { data, isLoading, error } = useFooterComponent();
-    const { handleRedictToCurrentPageHome, handleRedirectToChangelog, handleRedirectToTermsOfService, handleRedirectToGitHub, handleRedirectToFAQ, handleContactUs, handleRedirectToGitHubDiscussions, handleRedirectToCreateDrop, handleRedirectToUnlockDrop } = useRedirects();
+    const { handleRedictToCurrentPageHome, handleRedirectToChangelog, handleRedirectToTermsOfService, handleRedirectToGitHub, handleRedirectToFAQ, handleContactUs, handleRedirectToGitHubDiscussions, handleRedirectToCreateDrop, handleRedirectToUnlockDrop, handleRedirectToDocs } = useRedirects();
 
     const contextValue: FooterContextValue = React.useMemo(() => ({
         data,
@@ -44,7 +45,8 @@ export function FooterProvider({ children }: FooterProviderProps): React.ReactEl
         handleRedirectToGitHubDiscussions,
         handleRedirectToCreateDrop,
         handleRedirectToUnlockDrop,
-    }), [data, isLoading, error, handleRedictToCurrentPageHome, handleContactUs, handleRedirectToChangelog, handleRedirectToFAQ, handleRedirectToGitHub, handleRedirectToGitHubDiscussions, handleRedirectToTermsOfService, handleRedirectToCreateDrop, handleRedirectToUnlockDrop]);
+        handleRedirectToDocs,
+    }), [data, isLoading, error, handleRedictToCurrentPageHome, handleContactUs, handleRedirectToChangelog, handleRedirectToFAQ, handleRedirectToGitHub, handleRedirectToGitHubDiscussions, handleRedirectToTermsOfService, handleRedirectToCreateDrop, handleRedirectToUnlockDrop, handleRedirectToDocs]);
 
     return (
         <FooterContext.Provider value={contextValue}>

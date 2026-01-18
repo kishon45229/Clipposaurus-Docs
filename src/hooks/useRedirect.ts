@@ -1,6 +1,7 @@
 import React from "react";
 import {
   APP_URL,
+  DOCS_URL,
   MARKETING_URL,
   GITHUB_REPO_URL,
   GITHUB_ISSUES_URL,
@@ -21,6 +22,7 @@ interface RedirectsReturn {
   handleRedirectToGitHubSponsor: () => void;
   handleRedirectToCreateDrop: () => void;
   handleRedirectToUnlockDrop: () => void;
+  handleRedirectToDocs: () => void;
 }
 
 export function useRedirects(): RedirectsReturn {
@@ -32,6 +34,11 @@ export function useRedirects(): RedirectsReturn {
   // APP
   const handleRedirectToApp = React.useCallback(() => {
     window.location.href = APP_URL!;
+  }, []);
+
+  // DOCS
+  const handleRedirectToDocs = React.useCallback(() => {
+    window.location.href = DOCS_URL!;
   }, []);
 
   // GITHUB
@@ -101,5 +108,6 @@ export function useRedirects(): RedirectsReturn {
     handleRedirectToGitHubSponsor,
     handleRedirectToCreateDrop,
     handleRedirectToUnlockDrop,
+    handleRedirectToDocs
   };
 }
