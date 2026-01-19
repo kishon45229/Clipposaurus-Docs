@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Allow: /changelog
+Allow: /sitemap.xml
 
 Disallow: /api/
 Disallow: /_next/
