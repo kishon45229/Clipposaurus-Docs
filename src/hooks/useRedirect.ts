@@ -27,6 +27,8 @@ interface RedirectsReturn {
   handleRedirectToCreateDrop: () => void;
   handleRedirectToUnlockDrop: () => void;
   handleRedirectToDocs: () => void;
+  handleRedirectToPrivacyPolicy: () => void;
+  handleRedirectToAbousUs: () => void;
 }
 
 export function useRedirects(): RedirectsReturn {
@@ -95,9 +97,17 @@ export function useRedirects(): RedirectsReturn {
     window.location.href = MARKETING_URL! + "/terms-of-service";
   }, []);
 
+  const handleRedirectToPrivacyPolicy = React.useCallback(() => {
+    window.location.href = MARKETING_URL + "/privacy-policy";
+  }, []);
+
   // CONTACT US
   const handleContactUs = React.useCallback(() => {
     window.location.href = `mailto:${CONTACT_EMAIL}`;
+  }, []);
+
+  const handleRedirectToAbousUs = React.useCallback(() => {
+    window.location.href = MARKETING_URL + "/about";
   }, []);
 
   // CREATE DROP
@@ -137,5 +147,7 @@ export function useRedirects(): RedirectsReturn {
     handleRedirectToCreateDrop,
     handleRedirectToUnlockDrop,
     handleRedirectToDocs,
+    handleRedirectToPrivacyPolicy,
+    handleRedirectToAbousUs
   };
 }

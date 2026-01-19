@@ -20,6 +20,9 @@ export interface FooterContextValue {
     handleRedirectToUnlockDrop: () => void;
     handleRedirectToGitHubDiscussions: () => void;
     handleRedirectToDocs: () => void;
+    handleRedirectToAbousUs: () => void;
+    handleRedirectToPrivacyPolicy: () => void;
+    handleRedirectToGitHubSponsor: () => void;
 }
 
 const FooterContext = React.createContext<FooterContextValue | undefined>(undefined);
@@ -30,7 +33,7 @@ interface FooterProviderProps {
 
 export function FooterProvider({ children }: FooterProviderProps): React.ReactElement {
     const { data, isLoading, error } = useFooterComponent();
-    const { handleRedictToCurrentPageHome, handleRedirectToChangelog, handleRedirectToTermsOfService, handleRedirectToGitHub, handleRedirectToFAQ, handleContactUs, handleRedirectToGitHubDiscussions, handleRedirectToCreateDrop, handleRedirectToUnlockDrop, handleRedirectToDocs } = useRedirects();
+    const { handleRedictToCurrentPageHome, handleRedirectToChangelog, handleRedirectToGitHubSponsor, handleRedirectToTermsOfService, handleRedirectToGitHub, handleRedirectToFAQ, handleContactUs, handleRedirectToGitHubDiscussions, handleRedirectToCreateDrop, handleRedirectToUnlockDrop, handleRedirectToDocs, handleRedirectToAbousUs, handleRedirectToPrivacyPolicy } = useRedirects();
 
     const contextValue: FooterContextValue = React.useMemo(() => ({
         data,
@@ -46,7 +49,10 @@ export function FooterProvider({ children }: FooterProviderProps): React.ReactEl
         handleRedirectToCreateDrop,
         handleRedirectToUnlockDrop,
         handleRedirectToDocs,
-    }), [data, isLoading, error, handleRedictToCurrentPageHome, handleContactUs, handleRedirectToChangelog, handleRedirectToFAQ, handleRedirectToGitHub, handleRedirectToGitHubDiscussions, handleRedirectToTermsOfService, handleRedirectToCreateDrop, handleRedirectToUnlockDrop, handleRedirectToDocs]);
+        handleRedirectToAbousUs,
+        handleRedirectToPrivacyPolicy,
+        handleRedirectToGitHubSponsor
+    }), [data, isLoading, error, handleRedictToCurrentPageHome, handleRedirectToGitHubSponsor, handleContactUs, handleRedirectToChangelog, handleRedirectToFAQ, handleRedirectToGitHub, handleRedirectToGitHubDiscussions, handleRedirectToTermsOfService, handleRedirectToCreateDrop, handleRedirectToUnlockDrop, handleRedirectToDocs, handleRedirectToAbousUs, handleRedirectToPrivacyPolicy]);
 
     return (
         <FooterContext.Provider value={contextValue}>
