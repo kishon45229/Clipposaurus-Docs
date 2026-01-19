@@ -15,6 +15,7 @@ import { FooterProvider } from "@/contexts/FooterContext";
 import { siteMetadata } from "@/lib/siteMetadata";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { getNonce } from "@/lib/csp";
 
 // Trigger env validation
 import env from "@/lib/env";
@@ -27,16 +28,18 @@ const funnelSans = Funnel_Sans({
 
 export { siteMetadata as metadata };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const nonce = await getNonce();
+
   return (
     <RollbarProvider config={clientConfig}>
       <html lang="en" suppressHydrationWarning>
         <head>
-          <HeadTags />
+          <HeadTags nonce={nonce} />
         </head>
         <body className={`${funnelSans.className} antialiased h-screen md:portrait:h-fit overflow-auto bg-zinc-100 dark:bg-zinc-950 text-foreground`}>
           <ThemeProvider
@@ -59,7 +62,7 @@ export default function RootLayout({
                 </div>
                 <div>
                   {children}
-                   <Analytics />
+                  <Analytics />
                   <SpeedInsights />
                 </div>
                 <div>
